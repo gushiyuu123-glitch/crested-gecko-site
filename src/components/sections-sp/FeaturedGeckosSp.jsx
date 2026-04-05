@@ -127,11 +127,11 @@ export default function FeaturedGeckos() {
     });
 
   return (
-    <section
-      id="geckos"
-      ref={rootRef}
-      className="relative overflow-hidden px-6 pt-34 pb-36 md:px-10 md:pt-40 md:pb-40 xl:px-14 xl:pt-46 xl:pb-44"
-    >
+<section
+  id="geckos"
+  ref={rootRef}
+  className="relative overflow-hidden px-6 pt-16 pb-36 md:px-10 md:pt-40 md:pb-40 xl:px-14 xl:pt-48 xl:pb-44"
+>
       <style>{`
         #geckos [data-reveal][data-revealed="true"] {
           opacity: 1 !important;

@@ -178,14 +178,14 @@ export default function FAQ() {
                   BEFORE CONTACT
                 </p>
 
-           <p className="mt-3 max-w-[18em] font-display text-[26px] leading-[1.18] text-text-main md:text-[32px]">
+           <p className="mt-3 max-w-[18em] font-display text-[19px] leading-[1.18] text-text-main md:text-[32px]">
   わからないことがあっても、
   <br />
   そのままで大丈夫です。
 </p>
-                <p className="mt-4 max-w-[30em] text-[13px] leading-[1.86] text-text-soft/74">
-                  迷いや疑問がある状態のままでも問題ありません。
-                  まずは気になりやすいポイントから、静かに確認できるようにしています。
+                <p className="mt-4 max-w-[30em] text-[11px] leading-[1.86] text-text-soft/74">
+                  迷いや疑問がある状態のままでも問題ありません。 <br />
+                  まずは気になりやすいポイントから、 <br />静かに確認できるようにしています。
                 </p>
               </div>
             </div>

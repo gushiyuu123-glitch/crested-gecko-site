@@ -234,13 +234,13 @@ export default function HeroSp() {
         <img
           src="/hero-gecko1.png"
           alt="Crested gecko"
-          className="h-full w-full object-cover object-[62%_center]"
+          className="h-full w-full object-cover object-[60%_center]"
         />
       </div>
 
       {/* dark / humidity / readability layers */}
-      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,12,10,0.12)_0%,rgba(9,13,11,0.22)_24%,rgba(7,10,8,0.56)_64%,rgba(4,6,5,0.88)_100%)]" />
-      <div className="absolute inset-y-0 left-0 w-full bg-[linear-gradient(90deg,rgba(10,15,12,0.82)_0%,rgba(13,20,16,0.5)_42%,rgba(13,20,16,0.18)_72%,rgba(13,20,16,0.04)_100%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,12,10,0.14)_0%,rgba(9,13,11,0.24)_24%,rgba(7,10,8,0.54)_58%,rgba(4,6,5,0.88)_100%)]" />
+      <div className="absolute inset-y-0 left-0 w-full bg-[linear-gradient(90deg,rgba(10,15,12,0.84)_0%,rgba(13,20,16,0.56)_40%,rgba(13,20,16,0.22)_70%,rgba(13,20,16,0.05)_100%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(155,129,96,0.10)_0%,rgba(155,129,96,0.03)_20%,transparent_38%)]" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_76%_22%,rgba(98,120,95,0.10)_0%,rgba(98,120,95,0.03)_22%,transparent_38%)]" />
       <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.03)_0%,rgba(255,255,255,0.008)_20%,rgba(255,255,255,0)_42%)]" />
@@ -327,63 +327,63 @@ export default function HeroSp() {
       {/* top label */}
       <div
         ref={topLabelRefSp}
-        className="absolute left-5 top-5 z-20"
+        className="absolute left-5 top-6 z-20"
       >
-        <p className="text-[9px] uppercase tracking-[0.28em] text-text-soft/78">
+        <p className="text-[8px] uppercase tracking-[0.24em] text-text-soft/74">
           Carefully Raised in Okinawa
         </p>
       </div>
 
       {/* main copy */}
-      <div className="relative z-20 flex min-h-[100svh] items-end">
-        <div className="w-full px-5 pb-7 pt-24">
-          <div className="relative max-w-[420px]">
-            <p className="mb-3 text-[10px] tracking-[0.22em] text-text-soft/76">
-              クレステッドゲッコー専門
-            </p>
+      <div className="relative z-20 flex min-h-[100svh] items-start">
+        <div className="w-full px-5 pt-[168px] pb-60">
+         <div className="relative max-w-[320px] -translate-y-5">
+  <p className="mb-3 text-[9px] tracking-[0.18em] text-text-soft/76">
+    クレステッドゲッコー専門
+  </p>
 
-            <h1 className="font-display text-[42px] leading-[0.88] text-[#ece1cf] drop-shadow-[0_12px_28px_rgba(0,0,0,0.42)]">
-              {titleLinesSp.map((line, lineIndex) => (
-                <span
-                  key={line}
-                  className={`hero-title-breath-sp block ${
-                    lineIndex === 1 ? "-mt-1" : ""
-                  } tracking-[0.08em]`}
-                >
-                  {line.split("").map((char, index) => {
-                    const isAccentKSp = line === "GECKO" && char === "K";
-                    const isAccentCSp = line === "CRESTED" && char === "C";
-                    const isAccentOSp = line === "GECKO" && char === "O";
+  <h1 className="font-display text-[36px] leading-[0.94] text-[#ece1cf] drop-shadow-[0_12px_28px_rgba(0,0,0,0.42)]">
+    {titleLinesSp.map((line, lineIndex) => (
+      <span
+        key={line}
+        className={`hero-title-breath-sp block ${
+          lineIndex === 1 ? "-mt-[1px]" : ""
+        } tracking-[0.045em]`}
+      >
+        {line.split("").map((char, index) => {
+          const isAccentKSp = line === "GECKO" && char === "K";
+          const isAccentCSp = line === "CRESTED" && char === "C";
+          const isAccentOSp = line === "GECKO" && char === "O";
 
-                    return (
-                      <span
-                        key={`${line}-${char}-${index}`}
-                        className={[
-                          "hero-char-sp inline-block",
-                          isAccentKSp
-                            ? "translate-y-[2px] rotate-[1deg] text-[#d2b48a]"
-                            : "",
-                          isAccentCSp
-                            ? "rotate-[-1deg] text-[#d9c19c]"
-                            : "",
-                          isAccentOSp
-                            ? "translate-y-[1px] scale-y-[0.97] text-[#d8c8aa]"
-                            : "",
-                        ].join(" ")}
-                      >
-                        {char}
-                      </span>
-                    );
-                  })}
-                </span>
-              ))}
-            </h1>
+          return (
+            <span
+              key={`${line}-${char}-${index}`}
+              className={[
+                "hero-char-sp inline-block",
+                isAccentKSp
+                  ? "translate-y-[1px] rotate-[0.6deg] text-[#d2b48a]"
+                  : "",
+                isAccentCSp
+                  ? "rotate-[-0.6deg] text-[#d9c19c]"
+                  : "",
+                isAccentOSp
+                  ? "translate-y-[0.5px] scale-y-[0.985] text-[#d8c8aa]"
+                  : "",
+              ].join(" ")}
+            >
+              {char}
+            </span>
+          );
+        })}
+      </span>
+    ))}
+  </h1>
 
-            <div className="hero-divider-sp mt-4 h-px w-20 bg-[linear-gradient(90deg,rgba(214,194,161,0.64),rgba(214,194,161,0))]" />
+  <div className="hero-divider-sp mt-5 h-px w-16 bg-[linear-gradient(90deg,rgba(214,194,161,0.64),rgba(214,194,161,0))]" />
 
             <p
               ref={copyRefSp}
-              className="mt-4 max-w-[22em] text-[13px] leading-[1.82] text-text-soft/88"
+              className="mt-80  max-w-[20.5em] text-[12px] leading-[1.78] text-text-soft/88" 
             >
               静かに異様で、目を奪う。
               <br />
@@ -392,7 +392,7 @@ export default function HeroSp() {
               状態と相性を見ながらご案内しています。
             </p>
 
-            <div className="mt-4 flex flex-wrap gap-2 text-[10px] tracking-[0.14em] text-text-soft/74">
+            <div className="mt-4 flex flex-wrap gap-2 text-[9px] tracking-[0.12em] text-text-soft/74">
               <span className="hero-specialty-item-sp rounded-full border border-white/10 bg-white/[0.03] px-3 py-[7px]">
                 沖縄育成
               </span>
@@ -416,7 +416,7 @@ export default function HeroSp() {
                   border border-[#cdbd8f]/16
                   bg-[linear-gradient(180deg,rgba(205,189,143,0.045)_0%,rgba(64,82,58,0.04)_100%)]
                   px-4
-                  text-[12px] tracking-[0.14em] text-[#e2d6bc]
+                  text-[11px] tracking-[0.12em] text-[#e2d6bc]
                 "
               >
                 <span className="pointer-events-none absolute inset-0 bg-[linear-gradient(120deg,rgba(255,255,255,0)_0%,rgba(205,189,143,0.03)_38%,rgba(147,170,126,0.02)_58%,rgba(255,255,255,0)_100%)] opacity-0 transition duration-500 group-active:opacity-100" />
@@ -437,7 +437,7 @@ export default function HeroSp() {
                   border border-white/8
                   bg-white/[0.025]
                   px-4
-                  text-[12px] tracking-[0.14em] text-[#d5ddcf]
+                  text-[11px] tracking-[0.12em] text-[#d5ddcf]
                 "
               >
                 <span className="relative z-10 flex items-center gap-3">
