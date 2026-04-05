@@ -8,7 +8,6 @@ export default function HeroSp() {
   const bgRefSp = useRef(null);
   const mistRefSp = useRef(null);
   const rainLayerRefSp = useRef(null);
-  const topLabelRefSp = useRef(null);
   const copyRefSp = useRef(null);
   const ctaRefSp = useRef(null);
 
@@ -59,7 +58,6 @@ export default function HeroSp() {
       gsap.set(bgRefSp.current, { scale: 1.04, opacity: 0.72 });
       gsap.set(mistRefSp.current, { opacity: 0 });
       gsap.set(rainLayerRefSp.current, { opacity: 0.82 });
-      gsap.set(topLabelRefSp.current, { y: 8, opacity: 0 });
       gsap.set(charsSp, { y: 16, opacity: 0, filter: "blur(1.2px)" });
       gsap.set(copyRefSp.current, { y: 10, opacity: 0, filter: "blur(0.8px)" });
       gsap.set(specialtyItemsSp, { y: 10, opacity: 0 });
@@ -89,15 +87,6 @@ export default function HeroSp() {
           "-=0.9"
         )
         .to(
-          topLabelRefSp.current,
-          {
-            y: 0,
-            opacity: 1,
-            duration: 0.62,
-          },
-          "-=0.72"
-        )
-        .to(
           charsSp,
           {
             y: 0,
@@ -106,7 +95,7 @@ export default function HeroSp() {
             duration: 0.62,
             stagger: 0.022,
           },
-          "-=0.48"
+          "-=0.46"
         )
         .to(
           dividersSp,
@@ -115,7 +104,7 @@ export default function HeroSp() {
             opacity: 1,
             duration: 0.64,
           },
-          "-=0.24"
+          "-=0.22"
         )
         .to(
           copyRefSp.current,
@@ -125,7 +114,7 @@ export default function HeroSp() {
             filter: "blur(0px)",
             duration: 0.66,
           },
-          "-=0.28"
+          "-=0.26"
         )
         .to(
           specialtyItemsSp,
@@ -135,7 +124,7 @@ export default function HeroSp() {
             duration: 0.58,
             stagger: 0.04,
           },
-          "-=0.24"
+          "-=0.22"
         )
         .to(
           ctaItemsSp,
@@ -145,7 +134,7 @@ export default function HeroSp() {
             duration: 0.62,
             stagger: 0.05,
           },
-          "-=0.2"
+          "-=0.18"
         );
 
       gsap.to(mistRefSp.current, {
@@ -175,7 +164,7 @@ export default function HeroSp() {
     <section
       id="top"
       ref={rootRefSp}
-      className="relative min-h-[100svh] overflow-hidden bg-black text-text-main"
+      className="relative min-h-[92svh] overflow-hidden bg-black text-text-main"
     >
       <style>{`
         @keyframes forestFloatSp {
@@ -324,66 +313,56 @@ export default function HeroSp() {
         ))}
       </div>
 
-      {/* top label */}
-      <div
-        ref={topLabelRefSp}
-        className="absolute left-5 top-6 z-20"
-      >
-        <p className="text-[8px] uppercase tracking-[0.24em] text-text-soft/74">
-          Carefully Raised in Okinawa
-        </p>
-      </div>
-
       {/* main copy */}
-      <div className="relative z-20 flex min-h-[100svh] items-start">
-        <div className="w-full px-5 pt-[168px] pb-60">
-         <div className="relative max-w-[320px] -translate-y-5">
-  <p className="mb-3 text-[9px] tracking-[0.18em] text-text-soft/76">
-    クレステッドゲッコー専門
-  </p>
+      <div className="relative z-20 flex min-h-[92svh] items-start">
+        <div className="w-full px-5 pt-[116px] pb-40">
+          <div className="relative max-w-[320px]">
+            <p className="mb-3 text-[9px] tracking-[0.18em] text-text-soft/76">
+              クレステッドゲッコー専門
+            </p>
 
-  <h1 className="font-display text-[36px] leading-[0.94] text-[#ece1cf] drop-shadow-[0_12px_28px_rgba(0,0,0,0.42)]">
-    {titleLinesSp.map((line, lineIndex) => (
-      <span
-        key={line}
-        className={`hero-title-breath-sp block ${
-          lineIndex === 1 ? "-mt-[1px]" : ""
-        } tracking-[0.045em]`}
-      >
-        {line.split("").map((char, index) => {
-          const isAccentKSp = line === "GECKO" && char === "K";
-          const isAccentCSp = line === "CRESTED" && char === "C";
-          const isAccentOSp = line === "GECKO" && char === "O";
+            <h1 className="font-display text-[36px] leading-[0.94] text-[#ece1cf] drop-shadow-[0_12px_28px_rgba(0,0,0,0.42)]">
+              {titleLinesSp.map((line, lineIndex) => (
+                <span
+                  key={line}
+                  className={`hero-title-breath-sp block ${
+                    lineIndex === 1 ? "-mt-[1px]" : ""
+                  } tracking-[0.045em]`}
+                >
+                  {line.split("").map((char, index) => {
+                    const isAccentKSp = line === "GECKO" && char === "K";
+                    const isAccentCSp = line === "CRESTED" && char === "C";
+                    const isAccentOSp = line === "GECKO" && char === "O";
 
-          return (
-            <span
-              key={`${line}-${char}-${index}`}
-              className={[
-                "hero-char-sp inline-block",
-                isAccentKSp
-                  ? "translate-y-[1px] rotate-[0.6deg] text-[#d2b48a]"
-                  : "",
-                isAccentCSp
-                  ? "rotate-[-0.6deg] text-[#d9c19c]"
-                  : "",
-                isAccentOSp
-                  ? "translate-y-[0.5px] scale-y-[0.985] text-[#d8c8aa]"
-                  : "",
-              ].join(" ")}
-            >
-              {char}
-            </span>
-          );
-        })}
-      </span>
-    ))}
-  </h1>
+                    return (
+                      <span
+                        key={`${line}-${char}-${index}`}
+                        className={[
+                          "hero-char-sp inline-block",
+                          isAccentKSp
+                            ? "translate-y-[1px] rotate-[0.6deg] text-[#d2b48a]"
+                            : "",
+                          isAccentCSp
+                            ? "rotate-[-0.6deg] text-[#d9c19c]"
+                            : "",
+                          isAccentOSp
+                            ? "translate-y-[0.5px] scale-y-[0.985] text-[#d8c8aa]"
+                            : "",
+                        ].join(" ")}
+                      >
+                        {char}
+                      </span>
+                    );
+                  })}
+                </span>
+              ))}
+            </h1>
 
-  <div className="hero-divider-sp mt-5 h-px w-16 bg-[linear-gradient(90deg,rgba(214,194,161,0.64),rgba(214,194,161,0))]" />
+            <div className="hero-divider-sp mt-5 h-px w-16 bg-[linear-gradient(90deg,rgba(214,194,161,0.64),rgba(214,194,161,0))]" />
 
             <p
               ref={copyRefSp}
-              className="mt-80  max-w-[20.5em] text-[12px] leading-[1.78] text-text-soft/88" 
+              className="mt-56 max-w-[20.5em] text-[12px] leading-[1.78] text-text-soft/88"
             >
               静かに異様で、目を奪う。
               <br />
@@ -453,7 +432,7 @@ export default function HeroSp() {
       </div>
 
       {/* bottom fade */}
-      <div className="absolute inset-x-0 bottom-0 h-24 bg-[linear-gradient(180deg,rgba(3,5,4,0)_0%,rgba(3,5,4,0.84)_100%)]" />
+      <div className="absolute inset-x-0 bottom-0 h-20 bg-[linear-gradient(180deg,rgba(3,5,4,0)_0%,rgba(3,5,4,0.84)_100%)]" />
     </section>
   );
 }

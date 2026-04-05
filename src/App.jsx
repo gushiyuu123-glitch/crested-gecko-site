@@ -10,7 +10,8 @@ import ContactCTA from "./components/sections/ContactCTA";
 import BusinessInfo from "./components/sections/BusinessInfo";
 import Footer from "./components/sections/Footer";
 
-/* SP専用を新規追加 */
+/* SP専用 */
+import MobileNavSp from "./components/sections-sp/MobileNavSp";
 import HeroSp from "./components/sections-sp/HeroSp";
 import FeaturedGeckosSp from "./components/sections-sp/FeaturedGeckosSp";
 import PolicySp from "./components/sections-sp/PolicySp";
@@ -40,15 +41,43 @@ export default function App() {
 
       {/* SP */}
       <div className="md:hidden">
-        <HeroSp />
-        <FeaturedGeckosSp />
-        <PolicySp />
-        <FirstGuideSp />
-        <FlowSp />
-        <FAQSp />
-        <ContactCTASp />
-        <BusinessInfoSp />
-        <FooterSp />
+        <MobileNavSp />
+
+        <div id="top-sp">
+          <HeroSp />
+        </div>
+
+        <div id="geckos-sp">
+          <FeaturedGeckosSp />
+        </div>
+
+        <div id="policy-sp">
+          <PolicySp />
+        </div>
+
+        <div id="first-guide-sp">
+          <FirstGuideSp />
+        </div>
+
+        <div id="flow-sp">
+          <FlowSp />
+        </div>
+
+        <div id="faq-sp">
+          <FAQSp />
+        </div>
+
+        <div id="contact-sp">
+          <ContactCTASp />
+        </div>
+
+        <div id="info-sp">
+          <BusinessInfoSp />
+        </div>
+
+        <div id="footer-sp">
+          <FooterSp />
+        </div>
       </div>
     </div>
   );
