@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply m-0 bg-bg-top text-text-main font-sans antialiased;
+    min-width: 320px;
+    background-image: linear-gradient(
+      180deg,
+      #0f1916 0%,
+      #13211b 38%,
+      #151712 72%,
+      #0b0f0d 100%
+    );
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  img {
+    display: block;
+    max-width: 100%;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  ::selection {
+    background: rgba(171, 190, 150, 0.18);
+    color: #f3f6ee;
+  }
+}
+@keyframes geckoFloatA {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(14deg) scale(1);
+    opacity: 0.09;
+  }
+  25% {
+    transform: translate3d(0, -4px, 0) rotate(15.2deg) scale(1.008);
+    opacity: 0.105;
+  }
+  50% {
+    transform: translate3d(2px, -7px, 0) rotate(13.4deg) scale(1.012);
+    opacity: 0.095;
+  }
+  75% {
+    transform: translate3d(-1px, -3px, 0) rotate(14.8deg) scale(1.006);
+    opacity: 0.1;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(14deg) scale(1);
+    opacity: 0.09;
+  }
+}
+
+@keyframes geckoFloatB {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(-11deg) scale(1);
+    opacity: 0.08;
+  }
+  25% {
+    transform: translate3d(0, 5px, 0) rotate(-10deg) scale(1.01);
+    opacity: 0.092;
+  }
+  50% {
+    transform: translate3d(-2px, 9px, 0) rotate(-12.2deg) scale(1.014);
+    opacity: 0.084;
+  }
+  75% {
+    transform: translate3d(1px, 4px, 0) rotate(-10.6deg) scale(1.007);
+    opacity: 0.09;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(-11deg) scale(1);
+    opacity: 0.08;
+  }
+}
+
+.gecko-float-1 {
+  animation: geckoFloatA 8.6s ease-in-out infinite;
+  transform-origin: center center;
+  will-change: transform, opacity;
+}
+
+.gecko-float-2 {
+  animation: geckoFloatB 10.4s ease-in-out infinite;
+  transform-origin: center center;
+  will-change: transform, opacity;
+}
+@keyframes logoFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes logoBreath {
+  0%, 100% {
+    transform: translateY(10px) scale(1);
+    filter: brightness(1);
+  }
+  50% {
+    transform: translateY(8px) scale(1.012);
+    filter: brightness(1.04);
+  }
+}
